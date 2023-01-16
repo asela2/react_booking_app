@@ -2,11 +2,11 @@
 FROM node:14.14.0-alpine
 WORKDIR /app
 COPY ./package.json ./
+RUN npm i
+COPY . .
 CMD ["npm","run","start"]
 
-docker build -f Dockerfile.dev -t bookingapp/frontend
-
-
+docker build -f Dockerfile.dev -t bookingapp/frontend .
 
 
 # react_booking_app
