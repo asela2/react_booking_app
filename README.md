@@ -1,4 +1,5 @@
 // Docker setup
+
 FROM node:14.14.0-alpine
 WORKDIR /app
 COPY ./package.json ./
@@ -7,6 +8,8 @@ COPY . .
 CMD ["npm","run","start"]
 
 docker build -f Dockerfile.dev -t bookingapp/frontend .
+
+docker run -it -p 3000:3000 bookingapp/frontend
 
 
 # react_booking_app
