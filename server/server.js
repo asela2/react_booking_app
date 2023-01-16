@@ -1,12 +1,10 @@
 import express from "express";
-import fs from "fs";
+import { readdirSync } from "fs";
 
 const app = express();
 
 //route middleware
 
-fs.readdirSync("./routes").map((r) =>
-  app.use("/api", require(`./routes/${r}`))
-);
+readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
-app.listen(5000, () => console.log("server running on port 5000"));
+app.listen(4000, () => console.log("server running on port 4000"));
