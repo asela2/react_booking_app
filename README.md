@@ -4,7 +4,7 @@ WORKDIR /app
 COPY ./package.json ./
 CMD ["npm","run","start"]
 
-docker build -f Dockefile.dev -t bookingapp/frontend
+docker build -f Dockerfile.dev -t bookingapp/frontend
 
 
 
